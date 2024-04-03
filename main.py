@@ -9,4 +9,5 @@ async def root():
 
 
 
-app.include_router(auth_router, prefix='/auth')
+
+app.include_router(auth_router)
