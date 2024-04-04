@@ -9,13 +9,11 @@ from pydantic import BaseModel
 from userDB import users
 
 
-
 # to get a string like this run:
 # openssl rand -hex 32
 SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
-
 
 fake_users_db = users
 
@@ -23,17 +21,14 @@ class Token(BaseModel):
     access_token: str
     token_type: str
 
-
 class TokenData(BaseModel):
     username: Union[str, None] = None
-
 
 class User(BaseModel):
     username: str
     email: Union[str, None] = None
     full_name: Union[str, None] = None
     disabled: Union[bool, None] = None
-
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -53,8 +48,6 @@ def get_user(username: str):
     user = users.find_one({"username": username})
     return user
 
-
-
 def authenticate_user(username: str, password: str):
     user = get_user(username)
     if not user:
@@ -62,7 +55,6 @@ def authenticate_user(username: str, password: str):
     if not verify_password(password, user["hashed_password"]):
         return False
     return user
-
 
 def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None):
     to_encode = data.copy()
@@ -94,12 +86,16 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
         raise credentials_exception
     return user
 
-
 async def get_current_active_user(
     current_user: Annotated[User, Depends(get_current_user)],
 ):
     if current_user["disabled"]:
         raise HTTPException(status_code=400, detail="Inactive user")
+    return current_user
+
+async def auth(
+            current_user: Annotated[User, Depends(get_current_active_user)]
+):
     return current_user
 
 
@@ -121,15 +117,10 @@ async def login_for_access_token(
     return Token(access_token=access_token, token_type="bearer")
 
 
-@router.get("/users/me/", response_model=User)
-async def read_users_me(
-    current_user: Annotated[User, Depends(get_current_active_user)],
-):
-    return current_user
+## retrieve current user info
+# @router.get("/users/me/", response_model=User)
+# async def read_users_me(
+#     current_user: Annotated[User, Depends(get_current_active_user)],
+# ):
+#     return current_user
 
-
-@router.get("/users/me/items/")
-async def read_own_items(
-    current_user: Annotated[User, Depends(get_current_active_user)],
-):
-    return [{"item_id": "Foo", "owner": current_user["username"]}]
