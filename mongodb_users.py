@@ -1,9 +1,6 @@
-from fastapi import APIRouter, Body, Request, Response, HTTPException, status
+from fastapi import APIRouter
 from dotenv import dotenv_values
 import pymongo
-from typing import List
-from pydantic import BaseModel, Field
-import uuid
 
 config = dotenv_values(".env")
 
@@ -11,7 +8,7 @@ router = APIRouter()
 
 uri=config["ATLAS_URI"]
 db_name = config["DB_NAME"]
-users_collection = config["USER_SCOLLECTION"]
+users_collection = config["USERS_COLLECTION"]
 
 
 

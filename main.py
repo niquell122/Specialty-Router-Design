@@ -1,8 +1,9 @@
 from fastapi import FastAPI
-from auth import router as auth_router
-from userDB import router as user_db_router
 from pymongo import MongoClient
 from dotenv import dotenv_values
+
+from auth import router as auth_router
+from question_input_route import router as input_router
 
 
 config = dotenv_values(".env")
@@ -22,5 +23,5 @@ def startup_db_client():
 def shutdown_db_client():
     app.mongodb_client.close()
 
-# app.include_router(user_db_router, prefix='/users')
 app.include_router(auth_router)
+app.include_router(input_router)
