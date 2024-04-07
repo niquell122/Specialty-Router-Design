@@ -1,9 +1,6 @@
 from fastapi import APIRouter, Depends, Form
 from typing import Annotated
 from auth import auth
-from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, VectorParams, PointStruct, Filter, FieldCondition, MatchValue
-from gpt import client as gpt_client
 from qdrantgpt import get_question_context
 
 router = APIRouter()

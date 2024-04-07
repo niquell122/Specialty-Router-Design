@@ -1,8 +1,16 @@
 from qdrant_client.models import Distance, VectorParams
-import mocks
 from qdrantgpt import qclient, add_question_with_context, col, get_embedding
+from qdrant_client import QdrantClient
+from dotenv import dotenv_values
+import mocks
+config = dotenv_values(".env")
 
+qdrant_url=config["QDRANT_URL"]
+col=config["QDRANT_COLLECTION"]
 
+qclient = QdrantClient(url=qdrant_url)
+
+# reset collection
 try:
     operation_info = qclient.get_collection(collection_name=col)
     operation_info = qclient.delete_collection(collection_name=col)
@@ -30,9 +38,6 @@ if (question_context):
 
 new_question="como faz para transferir dinhero?"
 new_embedding = get_embedding(new_question)
-
-# print('\nNew Embedding:')
-# print(new_embedding[:5])
 
 search_result = qclient.search(
     collection_name=col, query_vector=new_embedding, limit=3

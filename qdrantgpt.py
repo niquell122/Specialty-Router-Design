@@ -3,10 +3,14 @@ from qdrant_client.models import PointStruct
 from gpt import client as gpt_client
 from datetime import datetime
 from mongodb_question_history import question_history
+from dotenv import dotenv_values
 
-qclient = QdrantClient(url="http://localhost:6333")
+config = dotenv_values(".env")
 
-col = "gpt_test_collection"
+qdrant_url=config["QDRANT_URL"]
+col=config["QDRANT_COLLECTION"]
+
+qclient = QdrantClient(url=qdrant_url)
 
 
 def get_embedding(text, model="text-embedding-3-small"):
