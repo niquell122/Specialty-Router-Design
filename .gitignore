@@ -3,3 +3,4 @@
 /app/venv
 .DS_Store
 /__pycache__/*
+playground-*.mongodb.js
