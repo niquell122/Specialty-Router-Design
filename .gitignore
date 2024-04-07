@@ -1,0 +1,5 @@
+/app/myenv
+/app/__pycache__
+/app/venv
+.DS_Store
+/__pycache__/*
