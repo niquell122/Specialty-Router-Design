@@ -5,14 +5,15 @@ services:
     ports:
       - 27017:27017
   qdrant:
-    image: qdrant
+    image: qdrant/qdrant:latest
+    restart: always
     ports:
-      - 
+      - 6333:6333
+      - 6334:6334
   app:
-    build: ./app
+    build: ./
     environment:
       - OPENAI_API_KEY=key
     ports:
       - 8000:8000
     
-

@@ -1,6 +1,6 @@
-/app/myenv
-/app/__pycache__
-/app/venv
+/myenv
+/__pycache__
+/venv
 .DS_Store
 /__pycache__/*
 playground-*.mongodb.js
