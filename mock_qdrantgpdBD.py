@@ -7,7 +7,7 @@ import mocks
 config = dotenv_values(".env")
 from datetime import datetime
 
-qdrant_url="http://localhost:6333"
+qdrant_url="http://qdrant:6333"
 col=config["QDRANT_COLLECTION"]
 
 qclient = QdrantClient(url=qdrant_url)

@@ -1,5 +1,8 @@
 [
     {
+    "_id": {
+        "$oid": "66141e7407619efc3bbbcdde"
+        },
     "username": "NicK",
     "full_name": "Nicolas",
     "email": "nicolas@email.com",
@@ -7,6 +10,9 @@
     "disabled": false
     },
     {
+        "_id": {
+            "$oid": "66142e7407613efc3bb2cdde"
+          },
         "username": "johndoe",
         "full_name": "John Doe",
         "email": "johndoe@example.com",

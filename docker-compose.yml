@@ -19,6 +19,8 @@ services:
     depends_on:
       - qdrant
     command: ["python", "mock_qdrantgpdBD.py"]
+    environment:
+      - OPENAI_API_KEY=key
   app:
     build: ./
     depends_on:

@@ -1,10 +1,24 @@
 [
-    {
-        "phrase":"como faz pix?",
-        "context":"pix"
+  {
+    "_id": {
+      "$oid": "66142e7407619efc3bbbcdde"
     },
-    {
-        "phrase":"como paga boleto?",
-        "context":"boleto"
-    }
+    "user": "NicK",
+    "question": "o que é um boleto??",
+    "timestamp": {
+      "$date": "2024-04-08T17:50:44.209Z"
+    },
+    "chat_id": "one day maybe"
+  },
+  {
+    "_id": {
+        "$oid": "66142e7407619efc3bb2cdde"
+    },
+    "user": "NicK",
+    "question": "como faço um pix?",
+    "timestamp": {
+      "$date": "2024-04-08T16:50:44.209Z"
+    },
+    "chat_id": "one day maybe"
+  }
 ]
