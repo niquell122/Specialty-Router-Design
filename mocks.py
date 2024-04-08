@@ -1,275 +1,180 @@
 pix_keywords=[
     {
-    "phrase": "transferencia pix",
+    "phrase": "Transferência",
     "context": "pix"
     },
     {
-    "phrase": "transferencia de pix",
+    "phrase": "Instantâneo",
     "context": "pix"
     },
     {
-    "phrase": "executar pix",
+    "phrase": "Chave",
     "context": "pix"
     },
     {
-    "phrase": "execução de pix",
+    "phrase": "QR Code",
     "context": "pix"
     },
     {
-    "phrase": "chave pix",
+    "phrase": "Pagamento",
     "context": "pix"
     },
     {
-    "phrase": "chave cpf",
+    "phrase": "Transação",
     "context": "pix"
     },
     {
-    "phrase": "chave email",
+    "phrase": "Copia e Cola",
     "context": "pix"
     },
     {
-    "phrase": "pix QR Code",
+    "phrase": "Conta",
     "context": "pix"
     },
     {
-    "phrase": "tarifa pix",
+    "phrase": "CPF/CNPJ",
     "context": "pix"
     },
     {
-    "phrase": "pix copia e cola",
+    "phrase": "TED",
     "context": "pix"
     },
     {
-    "phrase": "transação instantânea",
+    "phrase": "E-mail",
     "context": "pix"
     }
 ]
 
 pix_questions= [
     {
-    "phrase": "Como cadastrar uma chave PIX?",
+    "phrase": "Como funciona o sistema de chaves no PIX?",
     "context": "pix"
     },
     {
-    "phrase": "Quais são as chaves PIX disponíveis?",
+    "phrase": "Quais são os limites de valor para transferências via PIX?",
     "context": "pix"
     },
     {
-    "phrase": "É possível cancelar um PIX?",
+    "phrase": "É possível cancelar uma transação feita pelo PIX?",
     "context": "pix"
     },
     {
-    "phrase": "Quanto tempo leva para um PIX ser efetuado?",
+    "phrase": "Quais são os horários de funcionamento do PIX?",
     "context": "pix"
     },
     {
-    "phrase": "O PIX tem limite de valor?",
+    "phrase": "Quais são as medidas de segurança adotadas pelo PIX?",
     "context": "pix"
     },
     {
-    "phrase": "É possível receber um PIX de outra pessoa sem ter uma chave cadastrada?",
+    "phrase": "O PIX está disponível para quais tipos de conta?",
     "context": "pix"
     },
     {
-    "phrase": "Como faço para contestar um PIX?",
+    "phrase": "É possível agendar transferências pelo PIX?",
     "context": "pix"
     },
     {
-    "phrase": "O PIX é seguro?",
+    "phrase": "Como posso cadastrar minhas chaves no PIX?",
     "context": "pix"
     },
     {
-    "phrase": "Quais são as tarifas do PIX?",
+    "phrase": "Quais são as tarifas associadas às transações feitas pelo PIX?",
     "context": "pix"
     },
     {
-    "phrase": "Posso usar o PIX para pagar contas?",
+    "phrase": "Quais são as vantagens do PIX em comparação com outras formas de pagamento?",
     "context": "pix"
     },
 ]
 
-credit_keywords=[
+boleto_keywords=[
     {
-    "phrase": "Empréstimo",
-    "context": "credito"
+    "phrase": "Carnê",
+    "context": "boleto"
     },
     {
-    "phrase": "Financiamento",
-    "context": "credito"
+    "phrase": "Comprovante",
+    "context": "boleto"
     },
     {
     "phrase": "Juros",
-    "context": "credito"
+    "context": "boleto"
     },
     {
-    "phrase": "Parcelas",
-    "context": "credito"
+    "phrase": "Multa",
+    "context": "boleto"
     },
     {
-    "phrase": "Score de crédito",
-    "context": "credito"
+    "phrase": "Desconto",
+    "context": "boleto"
     },
     {
-    "phrase": "Parcelas",
-    "context": "credito"
+    "phrase": "Vencido",
+    "context": "boleto"
     },
     {
-    "phrase": "Limite de crédito",
-    "context": "credito"
+    "phrase": "Protesto",
+    "context": "boleto"
     },
     {
-    "phrase": "Garantia de crédito",
-    "context": "credito"
+    "phrase": "Fatura",
+    "context": "boleto"
     },
     {
-    "phrase": "Cartão de crédito",
-    "context": "credito"
+    "phrase": "Pagável",
+    "context": "boleto"
     },
     {
-    "phrase": "Análise de crédito",
-    "context": "credito"
-    },
-    {
-    "phrase": "Análise de crédito",
-    "context": "credito"
-    }   
-]
-
-credit_questions= [
-    {
-    "phrase": "Como aumentar meu score de crédito?",
-    "context": "credito"
-    },
-    {
-    "phrase": "Qual é a diferença entre cartão de crédito e cartão de débito?",
-    "context": "credito"
-    },
-    {
-    "phrase": "Como funciona a análise de crédito?",
-    "context": "credito"
-    },
-    {
-    "phrase": "Quais são os tipos de empréstimos disponíveis?",
-    "context": "credito"
-    },
-    {
-    "phrase": "Como negociar dívidas com o banco?",
-    "context": "credito"
-    },
-    {
-    "phrase": "Qual é a melhor forma de usar o cartão de crédito?",
-    "context": "credito"
-    },
-    {
-    "phrase": "O que é o limite de crédito?",
-    "context": "credito"
-    },
-    {
-    "phrase": "Como funciona o pagamento mínimo do cartão de crédito?",
-    "context": "credito"
-    },
-    {
-    "phrase": "Como solicitar um financiamento?",
-    "context": "credito"
-    },
-    {
-    "phrase": "Quais são os cuidados ao utilizar o crédito pessoal?",
-    "context": "credito"
+    "phrase": "Registrado",
+    "context": "boleto"
     }
 ]
 
-debit_keywords=[
+boleto_questions=[
     {
-    "phrase": "Pagamento",
-    "context": "debito"
+    "phrase": "Qual é a data de vencimento deste boleto?",
+    "context": "boleto"
     },
     {
-    "phrase": "Conta",
-    "context": "debito"
+    "phrase": "Quais são os dados do beneficiário deste boleto?",
+    "context": "boleto"
     },
     {
-    "phrase": "Cartão",
-    "context": "debito"
+    "phrase": "Como posso fazer o pagamento deste boleto?",
+    "context": "boleto"
     },
     {
-    "phrase": "Saldo",
-    "context": "debito"
+    "phrase": "Este boleto possui alguma taxa adicional?",
+    "context": "boleto"
     },
     {
-    "phrase": "Transação",
-    "context": "debito"
+    "phrase": "É possível pagar este boleto em qualquer banco",
+    "context": "boleto"
     },
     {
-    "phrase": "Banco",
-    "context": "debito"
+    "phrase": "Onde posso encontrar o código de barras deste boleto?",
+    "context": "boleto"
     },
     {
-    "phrase": "Tarifa",
-    "context": "debito"
+    "phrase": "Posso parcelar o pagamento deste boleto?",
+    "context": "boleto"
     },
     {
-    "phrase": "Movimentação",
-    "context": "debito"
+    "phrase": "Este boleto pode ser pago após a data de vencimento?",
+    "context": "boleto"
     },
     {
-    "phrase": "Autorização",
-    "context": "debito"
+    "phrase": "Como faço para gerar a segunda via deste boleto?",
+    "context": "boleto"
     },
     {
-    "phrase": "Segurança",
-    "context": "debito"
-    }
-]
-
-debit_questions=[
-    {
-    "phrase": "Como funciona um cartão de débito?",
-    "context": "debito"
-    },
-    {
-    "phrase": "Qual é a diferença entre um cartão de débito e um cartão de crédito?",
-    "context": "debito"
-    },
-    {
-    "phrase": "Como usar um cartão de débito para fazer compras online?",
-    "context": "debito"
-    },
-    {
-    "phrase": "Quais são os benefícios de usar um cartão de débito?",
-    "context": "debito"
-    },
-    {
-    "phrase": "Como proteger meu cartão de débito contra fraudes?",
-    "context": "debito"
-    },
-    {
-    "phrase": "Posso sacar dinheiro com um cartão de débito em caixas eletrônicos?",
-    "context": "debito"
-    },
-    {
-    "phrase": "Como cancelar um pagamento feito com cartão de débito?",
-    "context": "debito"
-    },
-    {
-    "phrase": "É possível realizar pagamentos parcelados com um cartão de débito?",
-    "context": "debito"
-    },
-    {
-    "phrase": "Como saber o saldo da minha conta bancária vinculada ao cartão de débito?",
-    "context": "debito"
-    },
-    {
-    "phrase": "O que fazer se meu cartão de débito for perdido ou roubado?",
-    "context": "debito"
-    },
-    {
-    "phrase": "Como executar um débito?",
-    "context": "debito"
+    "phrase": "Este boleto está registrado em meu CPF/CNPJ?",
+    "context": "boleto"
     }  
 ]
 
 pix = pix_keywords + pix_questions
-credit = credit_keywords + credit_questions
-debit = debit_keywords + debit_questions
+boleto = boleto_keywords + boleto_questions
 
-mock_question_context=  pix + credit + debit
+mock_question_context=  pix + boleto
