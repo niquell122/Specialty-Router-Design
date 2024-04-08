@@ -11,27 +11,7 @@ qdrant_url="http://localhost:6333"
 col=config["QDRANT_COLLECTION"]
 
 qclient = QdrantClient(url=qdrant_url)
-
-# reset collection
-try:
-    operation_info = qclient.get_collection(collection_name=col)
-    print(f'\nGet Collection: {operation_info}')
-    operation_info = qclient.delete_collection(collection_name=col)
-    print(f'\nDelete Collection: {operation_info}')
-except:
-    print(f'\nGet Collection: {operation_info}')
-
-
-operation_info= qclient.create_collection(
-    collection_name=col,
-    vectors_config=(VectorParams(size=1536, distance=Distance.COSINE)))
-
-if(operation_info):
-    print(f'Create Collection: {operation_info}')
-   
-
 question_context = mocks.mock_question_context
-
 
 def add_question_with_context(index: int, question: str, context: str):
    embedding = get_embedding(question)
@@ -46,25 +26,29 @@ def add_question_with_context(index: int, question: str, context: str):
    )
    print(f'Upsert: {status}')
 
+try:
+    # collection is already started
+    operation_info = qclient.get_collection(collection_name=col)
+    print(f'Get Collection: {operation_info}')
 
-if (question_context):
+except:
+    # start collection
+    print('STARTING COLLECTION')
+    operation_info= qclient.create_collection(
+    collection_name=col,
+    vectors_config=(VectorParams(size=1536, distance=Distance.COSINE))
+    )
+
+    # populate collection
     for i in range(len(question_context)):
         dict = question_context[i]
-        print(dict)
         add_question_with_context(index=i, question=dict["phrase"], context=dict["context"] )
 
+# new_question="como transferir dinhero?"
+# new_embedding = get_embedding(new_question)
 
-new_question="como faz para transferir dinhero?"
-new_embedding = get_embedding(new_question)
+# search_result = qclient.search(
+#     collection_name=col, query_vector=new_embedding, limit=3
+# )
 
-search_result = qclient.search(
-    collection_name=col, query_vector=new_embedding, limit=3
-)
-
-print('\nNew Question:')
-print(new_question)
-
-print('\nSearch Result:')
-for sr in search_result:
-   print(sr.payload)
-
+# print(search_result)

@@ -20,13 +20,3 @@ db = client[db_name]
 # create collection
 users = db[users_collection]
 
-# insert document
-users.insert_one(
-{
-    "username": "NicK",
-    "full_name": "Nicolas",
-    "email": "nicolas@email.com",
-    "hashed_password": "$2b$12$RbAOUFzNDykl2cNATFl0YueLjzoczb/1mFqTVrzxiErZ4UCqWifXa", # 123
-    "disabled": False,
-  }
-)

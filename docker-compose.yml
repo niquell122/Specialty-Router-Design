@@ -1,17 +1,29 @@
 version: "3.8"
 services:
   mongodb:
-    image: mongo:4.0-xenial
+    image: mongo:latest
     ports:
       - 27017:27017
+  mongo-importer:
+    build: ./mongodb/
+    depends_on:
+      - mongodb
   qdrant:
     image: qdrant/qdrant:latest
     restart: always
     ports:
       - 6333:6333
       - 6334:6334
+  qdrant-data:
+    build: .
+    depends_on:
+      - qdrant
+    command: ["python", "mock_qdrantgpdBD.py"]
   app:
     build: ./
+    depends_on:
+    - mongodb
+    - qdrant
     environment:
       - OPENAI_API_KEY=key
     ports:
