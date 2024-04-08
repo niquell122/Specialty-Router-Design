@@ -1,175 +1,175 @@
 pix_keywords=[
     {
-    "phrase": "Transferência",
+    "data": "Transferência",
     "context": "pix"
     },
     {
-    "phrase": "Instantâneo",
+    "data": "Instantâneo",
     "context": "pix"
     },
     {
-    "phrase": "Chave",
+    "data": "Chave",
     "context": "pix"
     },
     {
-    "phrase": "QR Code",
+    "data": "QR Code",
     "context": "pix"
     },
     {
-    "phrase": "Pagamento",
+    "data": "Pagamento",
     "context": "pix"
     },
     {
-    "phrase": "Transação",
+    "data": "Transação",
     "context": "pix"
     },
     {
-    "phrase": "Copia e Cola",
+    "data": "Copia e Cola",
     "context": "pix"
     },
     {
-    "phrase": "Conta",
+    "data": "Conta",
     "context": "pix"
     },
     {
-    "phrase": "CPF/CNPJ",
+    "data": "CPF/CNPJ",
     "context": "pix"
     },
     {
-    "phrase": "TED",
+    "data": "TED",
     "context": "pix"
     },
     {
-    "phrase": "E-mail",
+    "data": "E-mail",
     "context": "pix"
     }
 ]
 
 pix_questions= [
     {
-    "phrase": "Como funciona o sistema de chaves no PIX?",
+    "data": "Como funciona o sistema de chaves no PIX?",
     "context": "pix"
     },
     {
-    "phrase": "Quais são os limites de valor para transferências via PIX?",
+    "data": "Quais são os limites de valor para transferências via PIX?",
     "context": "pix"
     },
     {
-    "phrase": "É possível cancelar uma transação feita pelo PIX?",
+    "data": "É possível cancelar uma transação feita pelo PIX?",
     "context": "pix"
     },
     {
-    "phrase": "Quais são os horários de funcionamento do PIX?",
+    "data": "Quais são os horários de funcionamento do PIX?",
     "context": "pix"
     },
     {
-    "phrase": "Quais são as medidas de segurança adotadas pelo PIX?",
+    "data": "Quais são as medidas de segurança adotadas pelo PIX?",
     "context": "pix"
     },
     {
-    "phrase": "O PIX está disponível para quais tipos de conta?",
+    "data": "O PIX está disponível para quais tipos de conta?",
     "context": "pix"
     },
     {
-    "phrase": "É possível agendar transferências pelo PIX?",
+    "data": "É possível agendar transferências pelo PIX?",
     "context": "pix"
     },
     {
-    "phrase": "Como posso cadastrar minhas chaves no PIX?",
+    "data": "Como posso cadastrar minhas chaves no PIX?",
     "context": "pix"
     },
     {
-    "phrase": "Quais são as tarifas associadas às transações feitas pelo PIX?",
+    "data": "Quais são as tarifas associadas às transações feitas pelo PIX?",
     "context": "pix"
     },
     {
-    "phrase": "Quais são as vantagens do PIX em comparação com outras formas de pagamento?",
+    "data": "Quais são as vantagens do PIX em comparação com outras formas de pagamento?",
     "context": "pix"
     },
 ]
 
 boleto_keywords=[
     {
-    "phrase": "Carnê",
+    "data": "Carnê",
     "context": "boleto"
     },
     {
-    "phrase": "Comprovante",
+    "data": "Comprovante",
     "context": "boleto"
     },
     {
-    "phrase": "Juros",
+    "data": "Juros",
     "context": "boleto"
     },
     {
-    "phrase": "Multa",
+    "data": "Multa",
     "context": "boleto"
     },
     {
-    "phrase": "Desconto",
+    "data": "Desconto",
     "context": "boleto"
     },
     {
-    "phrase": "Vencido",
+    "data": "Vencido",
     "context": "boleto"
     },
     {
-    "phrase": "Protesto",
+    "data": "Protesto",
     "context": "boleto"
     },
     {
-    "phrase": "Fatura",
+    "data": "Fatura",
     "context": "boleto"
     },
     {
-    "phrase": "Pagável",
+    "data": "Pagável",
     "context": "boleto"
     },
     {
-    "phrase": "Registrado",
+    "data": "Registrado",
     "context": "boleto"
     }
 ]
 
 boleto_questions=[
     {
-    "phrase": "Qual é a data de vencimento deste boleto?",
+    "data": "Qual é a data de vencimento deste boleto?",
     "context": "boleto"
     },
     {
-    "phrase": "Quais são os dados do beneficiário deste boleto?",
+    "data": "Quais são os dados do beneficiário deste boleto?",
     "context": "boleto"
     },
     {
-    "phrase": "Como posso fazer o pagamento deste boleto?",
+    "data": "Como posso fazer o pagamento deste boleto?",
     "context": "boleto"
     },
     {
-    "phrase": "Este boleto possui alguma taxa adicional?",
+    "data": "Este boleto possui alguma taxa adicional?",
     "context": "boleto"
     },
     {
-    "phrase": "É possível pagar este boleto em qualquer banco",
+    "data": "É possível pagar este boleto em qualquer banco",
     "context": "boleto"
     },
     {
-    "phrase": "Onde posso encontrar o código de barras deste boleto?",
+    "data": "Onde posso encontrar o código de barras deste boleto?",
     "context": "boleto"
     },
     {
-    "phrase": "Posso parcelar o pagamento deste boleto?",
+    "data": "Posso parcelar o pagamento deste boleto?",
     "context": "boleto"
     },
     {
-    "phrase": "Este boleto pode ser pago após a data de vencimento?",
+    "data": "Este boleto pode ser pago após a data de vencimento?",
     "context": "boleto"
     },
     {
-    "phrase": "Como faço para gerar a segunda via deste boleto?",
+    "data": "Como faço para gerar a segunda via deste boleto?",
     "context": "boleto"
     },
     {
-    "phrase": "Este boleto está registrado em meu CPF/CNPJ?",
+    "data": "Este boleto está registrado em meu CPF/CNPJ?",
     "context": "boleto"
     }  
 ]
