@@ -5,8 +5,11 @@ from dotenv import dotenv_values
 from auth import router as auth_router
 from question_input_route import router as input_router
 
-
 config = dotenv_values(".env")
+mongo_url=config["MONGO_URL"]
+mongo_port=int(config["MONGO_PORT"])
+db_name = config["DB_NAME"]
+
 app = FastAPI()
 
 @app.get("/")
@@ -15,8 +18,8 @@ async def root():
 
 @app.on_event("startup")
 def startup_db_client():
-    app.mongodb_client = MongoClient(config["ATLAS_URI"])
-    app.database = app.mongodb_client[config["DB_NAME"]]
+    app.mongodb_client = MongoClient(mongo_url, mongo_port)
+    app.database = app.mongodb_client[db_name]
     print("Connected to the MongoDB database!")
 
 @app.on_event("shutdown")

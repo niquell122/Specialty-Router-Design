@@ -6,12 +6,17 @@ config = dotenv_values(".env")
 
 router = APIRouter()
 
-uri=config["ATLAS_URI"]
 db_name = config["DB_NAME"]
-users_collection = config["QUESTION_HISTORY_COLLECTION"]
+question_history_collection = config["QUESTION_HISTORY_COLLECTION"]
+mongo_url=config["MONGO_URL"]
+mongo_port=int(config["MONGO_PORT"])
 
 
+# connect to MongoDB
+client = pymongo.MongoClient(mongo_url, mongo_port)
 
-client = pymongo.MongoClient(uri)
+# create database
 db = client[db_name]
-question_history = db[users_collection]
+
+# create collection
+question_history = db[question_history_collection]

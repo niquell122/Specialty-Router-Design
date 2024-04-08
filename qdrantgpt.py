@@ -20,14 +20,14 @@ def get_embedding(text, model="text-embedding-3-small"):
 def add_question_with_context(index: int, question: str, context: str):
    embedding = get_embedding(question)
    if not index:
-     index = int(datetime.now().strftime("%Y%m%d%H%M%S"))
-   qclient.upsert(
-        collection_name=col,
-        wait=True,
-        points=[
+      index = int(datetime.now().strftime("%Y%m%d%H%M%S"))
+      qclient.upsert(
+         collection_name=col,
+         wait=True,
+         points=[
             PointStruct(id=index, vector=embedding, payload={ "question": question, "context": context})
-    ],
-)
+      ],
+   )
    
 def get_question_context(username, question):
     new_embedding = get_embedding(question)
