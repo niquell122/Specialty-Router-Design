@@ -7,7 +7,7 @@ from dotenv import dotenv_values
 router = APIRouter()
 
 config = dotenv_values(".env")
-search_quantity=config["SEARCH_QUANTITY"]
+search_quantity=int(config["SEARCH_QUANTITY"])
 
 @router.post('/question/context')
 def quest_context(
@@ -16,7 +16,7 @@ def quest_context(
     ):
     username = current_user["username"]
 
-    result = get_question_context(username, question, search_quantity)
+    result = get_question_context(username=username, data=question, limit=search_quantity)
 
     return result
 

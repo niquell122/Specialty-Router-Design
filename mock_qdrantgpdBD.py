@@ -20,7 +20,7 @@ qclient = QdrantClient(url=qdrant_url)
 question_context = mocks.mock_question_context
 
 try:
-    # collection is already started
+    # see if collection is already started
     qclient.get_collection(collection_name=col)
     # print(f'Get Collection: {operation_info}')
 except:

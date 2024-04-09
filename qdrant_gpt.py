@@ -1,7 +1,7 @@
 from qdrant_client import QdrantClient
 from qdrant_client.models import PointStruct
 from gpt import client as gpt_client
-from datetime import datetime
+from datetime import datetime, timedelta
 from mongodb_question_history import question_history
 from dotenv import dotenv_values
 from uuid import uuid4
@@ -11,6 +11,9 @@ config = dotenv_values(".env")
 
 qdrant_url=config["QDRANT_URL"]
 col=config["QDRANT_COLLECTION"]
+search_quantity=int(config["SEARCH_QUANTITY"])
+score_threshold=float(config["SCORE_THRESHOLD"])
+
 majority_threshold=int(config["MAJORITY_THRESHOLD"])
 
 qclient = QdrantClient(url=qdrant_url)
@@ -37,12 +40,11 @@ def get_majority(list, fieldname):
    number_of_appearances = field_counts.most_common(1)[0][1]
    return most_common_value, number_of_appearances
 
-def get_question_context(username, question, limit=3):
-   new_embedding = get_embedding(question)
-
+def get_question_context(username, data, limit=search_quantity, history=True):
+   new_embedding = get_embedding(data)
    question_history.insert_one({
    "user": username,
-   "question": question,
+   "data": data,
    "timestamp": datetime.now(),
    "chat_id":"one day maybe" 
    })
@@ -52,13 +54,40 @@ def get_question_context(username, question, limit=3):
    )
    first_match = search_result[0]
 
-   if first_match.score > 0.9:
+   # return if the match score is higher then the threshold:
+   if first_match.score >= score_threshold:
       return first_match.payload["context"]
 
-   context, ammount = get_majority(search_result, "context")
+   majority_context, ammount = get_majority(search_result, "context")
 
+   # return if the result has a numer of objects of the same context higher then the threshold
    if(ammount>majority_threshold):
-      return context
+      return majority_context
    
+   # if history is set, check users history
+   if(history):
+      two_minutes_ago = datetime.now() - timedelta(minutes=2)
+      user_recent_history=question_history.find({
+         "user": username,
+         "timestamp": {
+            "$gte": two_minutes_ago,
+         },
+         "data": {
+            "$ne": data
+         }
+      })
+      # if the user has 
+      if(user_recent_history):
+         for previous_message in user_recent_history:
+            data+=previous_message["data"]
+
+         return get_question_context(
+            username=username, 
+            data=data,
+            limit=search_quantity,
+            history=False
+         )
+   
+   # give up
    return {"Hal":"i'm sorry Dave, I'm affraid i can't do that."}
 
